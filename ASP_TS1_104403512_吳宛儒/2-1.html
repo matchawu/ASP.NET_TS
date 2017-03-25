@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2</title>
+	<script src="dist/clipboard.min.js"></script>
+	<script type="text/javascript">
+	function CopyToClipboard() { 
+		CopiedTxt = document.selection.createRange('usrname'); 
+		CopiedTxt.execCommand(”Copy”); 
+	} 
+
+	function PasteFromClipboard() { 
+		document.Form1.txtArea.focus(); 
+		PastedText = document.Form1.txtArea.createTextRange('usrname'); 
+		PastedText.execCommand(”Paste”); 
+	} 
+	
+	</script>
+</head>
+<body>
+<form>
+	請輸入您的帳號:<input type="text" name="usrname" id="usrname"><br>
+	請輸入您的密碼:<input type="password" name="passwd"><br>
+	點擊下面的按鈕，把欄位一帳號的字串內容複製到欄位三中:<br>
+	<input type="textbox" name="copyusrname">
+	<button type="button" name="copy" onclick="CopyToClipboard(document.getElementById('usrname').innerHTML);PasteFromClipboard(document.getElementById('usrname').innerHTML)">複製</button>
+</form>
+</body>
+</html>
